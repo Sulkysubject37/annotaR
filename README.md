@@ -1,0 +1,62 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# annotaR
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+The goal of `annotaR` is to provide a tidy, pipe-based framework for the
+integrated annotation of gene lists. It streamlines the process of
+fetching and combining functional annotations, disease associations, and
+known drug information from multiple bioinformatics databases.
+
+## Installation
+
+You can install the development version of annotaR from GitHub with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Sulkysubject37/annotaR")
+```
+
+## Example Workflow
+
+`annotaR` uses a pipe-based (`%>%`) workflow to progressively add layers
+of information to your initial gene list.
+
+1.  **Start with a list of genes.**
+2.  **Add functional annotations** (e.g., Gene Ontology terms from
+    g:Profiler).
+3.  **Add disease and drug data** (from OpenTargets).
+4.  **Visualize the results.**
+
+Here is a quick example using a small list of cancer-related genes:
+
+``` r
+library(annotaR)
+library(dplyr)
+
+# 1. Define genes and initialize pipeline
+genes_of_interest <- c("TP53", "EGFR", "BRCA1", "KRAS", "BRAF")
+annotaR_obj <- annotaR(genes_of_interest)
+
+# 2. Add annotations in a single pipeline
+full_annotation <- annotaR_obj %>%
+  add_go_terms(sources = c("GO:BP")) %>%
+  add_disease_links() %>%
+  add_drug_links()
+
+# 3. Explore the results
+# Filter for high-confidence disease links
+full_annotation %>%
+  filter(association_score > 0.8) %>%
+  head()
+  
+# 4. Create a plot
+plot_enrichment_dotplot(full_annotation, n_terms = 15)
+```
+
+This workflow generates a rich, tidy data frame containing integrated
+information, ready for downstream analysis and visualization.

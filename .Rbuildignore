@@ -1,0 +1,9 @@
+^README\.Rmd$
+^README\.html$
+^example\.R$
+^alzheimer_analysis\.R$
+^old_annotate_genes\.R$
+^results/
+^temp/
+^\.Rproj\.user/
+^GE-2023-0143-s002\.docx$

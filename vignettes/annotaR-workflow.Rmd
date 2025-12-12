@@ -1,0 +1,69 @@
+---
+title: "Introduction to annotaR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to annotaR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+# Note: Vignettes are built in a clean environment.
+# All package dependencies must be loaded.
+library(annotaR)
+library(dplyr)
+library(ggplot2)
+```
+
+This vignette provides a walkthrough of the `annotaR` package, demonstrating how to perform a multi-layered annotation of a gene list.
+
+### 1. Starting the Pipeline
+
+First, we define a character vector of our genes of interest. For this example, we use a small list of well-known cancer-related genes. Then, we initialize the pipeline with the `annotaR()` function.
+
+```{r setup}
+# A small list of well-known genes involved in cancer
+genes_of_interest <- c(
+  "TP53", "EGFR", "BRCA1", "BRCA2", "KRAS", "PIK3CA", "AKT1", "BRAF",
+  "MYC", "ERBB2", "CDKN2A", "PTEN"
+)
+
+# Create the initial object
+annotaR_obj <- annotaR(genes_of_interest)
+
+print(annotaR_obj)
+```
+
+### 2. Adding Functional and Disease Annotations
+
+The power of `annotaR` comes from its pipe-friendly, layered approach. We can chain functions together to progressively add data. Here, we add Gene Ontology (GO) terms, disease associations, and known drug links.
+
+```{r annotation, eval=TRUE}
+# Note: The following steps query live APIs and may take a few moments.
+
+full_annotation <- annotaR_obj %>%
+  add_go_terms(sources = c("GO:BP")) %>%
+  add_disease_links() %>%
+  add_drug_links()
+
+# Take a look at the resulting tidy data frame
+# Use `head()` to show just the first few rows
+head(full_annotation)
+```
+
+### 3. Visualizing Enrichment Results
+
+After annotating, we can easily visualize the results. The `plot_enrichment_dotplot()` function creates a publication-ready plot for the GO enrichment data.
+
+```{r plotting, fig.width=7, fig.height=6}
+# The plot function uses the data from the `add_go_terms` step
+plot_enrichment_dotplot(
+  full_annotation,
+  n_terms = 20,
+  title = "Top 20 Enriched GO Biological Processes"
+)
+```

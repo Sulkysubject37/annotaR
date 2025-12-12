@@ -1,0 +1,27 @@
+Package: annotaR
+Title: Tidy, Integrated Gene Annotation
+Version: 0.1.0
+Authors@R: person("MD.", "Arshad", email = "arshad10867c@gmail.com", role = c("aut", "cre"))
+Maintainer: MD. Arshad <arshad10867c@gmail.com>
+Description: A framework for intuitive, multi-source gene and protein annotation, with a focus on integrating functional genomics with disease and drug data for translational insights.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    dplyr,
+    gprofiler2,
+    httr,
+    jsonlite,
+    purrr,
+    tidyr,
+    ggplot2,
+    biomaRt,
+    tibble,
+    magrittr
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Config/testthat/edition: 3
