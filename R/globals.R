@@ -10,5 +10,7 @@ utils::globalVariables(c(
 # ---- Dummy Imports to satisfy R CMD check for indirect dependencies ----
 #' @importFrom later later
 #' @importFrom Rcpp loadRcppModules
+#' @importFrom knitr knit_theme
+#' @importFrom rmarkdown render
+#' @importFrom testthat expect_true
 NULL
-
