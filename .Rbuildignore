@@ -7,3 +7,5 @@
 ^temp/
 ^\.Rproj\.user/
 ^GE-2023-0143-s002\.docx$
+^\.github/
+^doc/
