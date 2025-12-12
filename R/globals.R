@@ -6,3 +6,9 @@ utils::globalVariables(c(
   "gene_count", "hgnc_symbol", "intersection", "mechanism_of_action", "p_value", "phase",
   "term_id", "term_name"
 ))
+
+# ---- Dummy Imports to satisfy R CMD check for indirect dependencies ----
+#' @importFrom later later
+#' @importFrom Rcpp loadRcppModules
+NULL
+
