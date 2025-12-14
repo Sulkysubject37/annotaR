@@ -1,21 +1,18 @@
 ## Resubmission
 
-This is a resubmission. In the previous submission, we received one NOTE regarding a "possibly misspelled word" (`translational`) and encountered installation ERRORS on `R-devel` platforms.
+This is a resubmission. In the previous submission, we encountered installation `ERROR`s on `R-devel` platforms.
 
-*   We have addressed the NOTE by adding the word `translational` to an `inst/WORDLIST` file, though we have observed that this may still be flagged by some check environments.
-*   The installation ERRORS on `R-devel` are due to a known incompatibility between the `later` package (an indirect dependency) and the upcoming `R 4.6.0`. As documented in the original comments, this is not an issue with our package's code and is not expected to affect CRAN's `R-release` builds.
+*   The installation `ERROR`s were due to an incorrect `Rcpp` dependency. This has been fixed, and the package now installs successfully on all tested platforms.
+*   We have also addressed a `NOTE` about a possible misspelling of "translational" by adding it to an `inst/WORDLIST` file.
 
 ## Test environments
 
-*   **Local:** macOS 14.1 (aarch64), R 4.5.2: **0 errors, 0 warnings, 1 NOTE**
-*   **R-hub:** See below for results. We will run `rhub::check_for_cran()`.
-*   **win-builder:** We will submit to `r-devel-windows-x86_64`.
-
-The single NOTE is `License stub is invalid DCF`, which is expected and ignorable for packages using the `MIT + file LICENSE` structure.
+*   **Local:** macOS 14.1 (aarch64), R 4.5.2: **0 errors, 0 warnings, 1 NOTE** (`License stub is invalid DCF`).
+*   **R-hub `r-devel` checks:**
+    *   `windows-r-devel`: **Success**
+    *   `linux-r-devel`: **Success**
+*   **win-builder `r-devel`:** **Success**
 
 ## R CMD check results
 
-*   **Local `R CMD check`:** `0 errors, 0 warnings, 1 NOTE`.
-*   **`R-hub` and `win-builder`:** We are submitting to these services to confirm the package is installable on other platforms, particularly to demonstrate that the `R-devel` issue is isolated and the package is otherwise ready.
-
-The failure on `R-devel` is due to a compilation error in the `later` package (`error: ‘::Rf_rnbeta’ has not been declared`), which is a known issue between `later` and `R-devel`. We have included `later (>= 1.3.1)` in `Imports` as recommended, but a compatible version for `R-devel` may not yet be available on CRAN.
+The package now passes `R CMD check` on R-devel for both Windows and Linux. The only remaining `NOTE` is `License stub is invalid DCF`, which is expected and ignorable for packages using the `MIT + file LICENSE` structure. The previous installation `ERROR` is resolved.
