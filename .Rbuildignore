@@ -9,3 +9,5 @@
 ^GE-2023-0143-s002\.docx$
 ^\.github/
 ^doc/
+^CRAN-SUBMISSION$
+^cran-comments\.md$

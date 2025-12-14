@@ -1,2 +1,3 @@
 /doc/
 /Meta/
+annotaR.Rcheck/\n*.RData\n.Rhistory\n.DS_Store
