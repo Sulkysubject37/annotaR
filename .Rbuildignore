@@ -11,3 +11,4 @@
 ^doc/
 ^CRAN-SUBMISSION$
 ^cran-comments\.md$
+^cran-comments\.txt$
