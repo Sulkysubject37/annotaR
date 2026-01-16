@@ -20,7 +20,7 @@ OpenTargets platform. This includes the drug name, type, mechanism of
 action, and clinical trial phase.
 }
 \examples{
-\dontrun{
+\donttest{
   annotaR(c("EGFR", "BRAF")) \%>\%
     add_drug_links()
 }

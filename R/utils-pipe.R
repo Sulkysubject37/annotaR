@@ -7,4 +7,5 @@
 #' @keywords internal
 #' @export
 #' @importFrom magrittr %>%
+#' @return The result of the right-hand side function.
 NULL

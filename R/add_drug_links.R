@@ -19,7 +19,7 @@
 #' @importFrom tibble tibble
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   annotaR(c("EGFR", "BRAF")) %>%
 #'     add_drug_links()
 #' }

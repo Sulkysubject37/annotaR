@@ -3,7 +3,7 @@ Title: Tidy, Integrated Gene Annotation
 Version: 0.1.0
 Authors@R: person("MD.", "Arshad", email = "arshad10867c@gmail.com", role = c("aut", "cre"))
 Maintainer: MD. Arshad <arshad10867c@gmail.com>
-Description: A framework for intuitive, multi-source gene and protein annotation, with a focus on integrating functional genomics with disease and drug data for translational insights.
+Description: A framework for intuitive, multi-source gene and protein annotation, with a focus on integrating functional genomics with disease and drug data for translational insights. Methods used include g:Profiler (Raudvere et al. (2019) <doi:10.1093/nar/gkz369>), biomaRt (Durinck et al. (2009) <doi:10.1038/nprot.2009.97>), and the Open Targets Platform (Koscielny et al. (2017) <doi:10.1093/nar/gkw1055>).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

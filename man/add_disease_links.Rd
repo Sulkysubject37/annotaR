@@ -22,7 +22,7 @@ Augments an annotaR object with disease association data from the
 OpenTargets platform.
 }
 \examples{
-\dontrun{
+\donttest{
   annotaR(c("TP53", "EGFR")) \%>\%
     add_disease_links(score_threshold = 0.8)
 }

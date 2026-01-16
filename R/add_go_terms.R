@@ -21,7 +21,7 @@
 #' @importFrom tidyr separate_rows
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   annotaR(c("TP53", "EGFR")) %>%
 #'     add_go_terms()
 #' }

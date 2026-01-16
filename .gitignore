@@ -1,3 +1,21 @@
-/doc/
+# R artifacts
+.RData
+.Rhistory
+.Rproj.user
+.Ruserdata
+
+# Build artifacts
+*.tar.gz
+*.Rcheck/
 /Meta/
-annotaR.Rcheck/\n*.RData\n.Rhistory\n.DS_Store
+/doc/
+src/*.o
+src/*.so
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+
+# Editor files
+*.swp

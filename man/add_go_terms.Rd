@@ -28,7 +28,7 @@ It performs a Gene Ontology (GO) analysis on the gene list and joins the
 results.
 }
 \examples{
-\dontrun{
+\donttest{
   annotaR(c("TP53", "EGFR")) \%>\%
     add_go_terms()
 }

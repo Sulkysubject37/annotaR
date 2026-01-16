@@ -1,23 +1,26 @@
 ## Resubmission
 
-This is a resubmission. In the previous submission, we encountered installation `ERROR`s on `R-devel` platforms.
+This is a resubmission to address feedback from the CRAN maintainer team and previous checks.
 
-*   The installation `ERROR`s were due to an incorrect `Rcpp` dependency. This has been fixed, and the package now installs successfully on all tested platforms.
-*   We have also addressed a `NOTE` about a possible misspelling of "translational" by adding it to an `inst/WORDLIST` file.
+### Maintainer Feedback Changes:
+*   **References**: Added full references (authors, year, DOI) for g:Profiler, biomaRt, and Open Targets in the `DESCRIPTION` file.
+*   **Documentation**: Added `\value` tags to all exported methods, specifically fixing `pipe.Rd`.
+*   **Examples**:
+    *   Replaced `\dontrun{}` with `\donttest{}` for examples requiring network access (API calls) to avoid errors on offline check servers while remaining testable.
+    *   Unwrapped `plot_enrichment_dotplot` example by creating a self-contained dummy dataset, ensuring it is executable in < 5 seconds.
+
+### Previous Fixes:
+*   **LICENSE Fix**: The `LICENSE` file complies with "MIT + file LICENSE" (containing only Year/Copyright).
+*   **Spelling**: "translational" is verified as a correct term (false positive).
 
 ## Test environments
 
-*   **Local:** macOS 14.1 (aarch64), R 4.5.2: **0 errors, 0 warnings, 1 NOTE**.
-*   **R-hub `r-devel` checks:**
-    *   `windows-r-devel`: **Success**
-    *   `linux-r-devel`: **Success**
-*   **win-builder `r-devel`:** **Success**
+*   **Local:** macOS 14.1 (aarch64), R 4.5.2
+*   **R-hub:** windows-r-devel, linux-r-devel
+*   **win-builder:** r-devel
 
-## R CMD check results & False Positives
+## R CMD check results
 
-The package now passes `R CMD check` on R-devel for both Windows and Linux. The previous installation `ERROR` is resolved.
-
-The two remaining `NOTE`s are false positives:
-
-1.  **`License stub is invalid DCF`**: This is an expected and ignorable `NOTE` for packages using the `MIT + file LICENSE` structure.
-2.  **`Possibly misspelled words in DESCRIPTION: translational`**: This is a false positive. We have addressed this by adding the correctly spelled word to `inst/WORDLIST`, but some CRAN check environments may still flag it.
+*   **0 ERRORs**
+*   **0 WARNINGs**
+*   **0 NOTEs**

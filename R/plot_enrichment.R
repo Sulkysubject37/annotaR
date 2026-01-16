@@ -18,10 +18,16 @@
 #' @importFrom stats reorder
 #'
 #' @examples
-#' \dontrun{
-#'   # Assuming 'annotated_data' is the result of add_go_terms()
-#'   plot_enrichment_dotplot(annotated_data)
-#' }
+#' # Create a dummy annotaR object with enrichment data
+#' annotated_data <- tibble::tibble(
+#'   gene = c("TP53", "TP53", "EGFR"),
+#'   term_name = c("Cell cycle", "Apoptosis", "Cell cycle"),
+#'   p_value = c(0.001, 0.005, 0.001),
+#'   source = "GO:BP",
+#'   intersection = "TP53,EGFR"
+#' )
+#' 
+#' plot_enrichment_dotplot(annotated_data)
 plot_enrichment_dotplot <- function(annotaR_object, n_terms = 20, title = "Top GO Enrichment Results") {
   
   # --- Input validation ---
