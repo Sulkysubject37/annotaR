@@ -1,26 +1,26 @@
-## Resubmission
+## Resubmission (Version 0.1.1)
 
-This is a resubmission to address feedback from the CRAN maintainer team and previous checks.
+This is a resubmission of annotaR (v0.1.1) to address the feedback from the CRAN maintainer team (Benjamin Altmann).
 
-### Maintainer Feedback Changes:
-*   **References**: Added full references (authors, year, DOI) for g:Profiler, biomaRt, and Open Targets in the `DESCRIPTION` file.
-*   **Documentation**: Added `\value` tags to all exported methods, specifically fixing `pipe.Rd`.
-*   **Examples**:
-    *   Replaced `\dontrun{}` with `\donttest{}` for examples requiring network access (API calls) to avoid errors on offline check servers while remaining testable.
-    *   Unwrapped `plot_enrichment_dotplot` example by creating a self-contained dummy dataset, ensuring it is executable in < 5 seconds.
+### Maintainer Feedback Resolved:
+*   **Documentation**: Added missing `\value` tags to all exported methods. Specifically, `pipe.Rd` now includes a `\value` section.
+*   **Examples**: All examples previously wrapped in `\dontrun{}` have been changed to `\donttest{}` as requested.
+*   **Version Bump**: Incremented version to `0.1.1` to ensure a clean build/state.
 
-### Previous Fixes:
-*   **LICENSE Fix**: The `LICENSE` file complies with "MIT + file LICENSE" (containing only Year/Copyright).
-*   **Spelling**: "translational" is verified as a correct term (false positive).
+### Previous Fixes (from v0.1.0):
+*   **References**: Added full references for g:Profiler, biomaRt, and Open Targets in the `DESCRIPTION` file.
+*   **LICENSE**: Complies with "MIT + file LICENSE" structure.
+*   **Spelling**: Added "translational" to `inst/WORDLIST`.
 
 ## Test environments
 
-*   **Local:** macOS 14.1 (aarch64), R 4.5.2
-*   **R-hub:** windows-r-devel, linux-r-devel
-*   **win-builder:** r-devel
+*   **Local:** macOS Tahoe 26.2 (aarch64), R 4.5.2
+*   **R CMD check --as-cran results:** 0 ERRORs | 0 WARNINGs | 3 NOTEs
+
+### NOTEs:
+*   **New submission**: Incoming feasibility NOTE is expected.
+*   **Future file timestamps**: Transient network/time sync issue during local check.
+*   **HTML manual**: Lack of 'tidy' binary locally.
 
 ## R CMD check results
-
-*   **0 ERRORs**
-*   **0 WARNINGs**
-*   **0 NOTEs**
+0 errors | 0 warnings | 3 notes
