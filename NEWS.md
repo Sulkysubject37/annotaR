@@ -1,3 +1,8 @@
+# annotaR 0.1.1
+
+* CRAN resubmission fixes.
+* Documentation improvements: added `\value` tag to `pipe.Rd` and switched examples to use `\donttest{}` instead of `\dontrun{}`.
+
 # annotaR 0.1.0
 
 * Initial release of `annotaR`.
